@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final compassProvider = StreamProvider<double?>((ref) async* {
   if (FlutterCompass.events == null) {
-    throw Exception('Dvice does not have sensors');
+    throw Exception('Device does not have sensors');
   }
 
   try {

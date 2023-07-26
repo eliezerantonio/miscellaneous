@@ -41,6 +41,11 @@ final _menuItems = <_MenuItem>[
     icon: Icons.explore,
     route: '/compass',
   ),
+  _MenuItem(
+    title: 'Pokemons',
+    icon: Icons.explore,
+    route: '/pokemons',
+  ),
 ];
 
 class MainMenu extends StatelessWidget {
