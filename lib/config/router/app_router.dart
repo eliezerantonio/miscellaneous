@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:miscellaneous/presentation/screens/permissions/permissions_screen.dart';
 
@@ -37,7 +36,15 @@ final router = GoRouter(
     GoRoute(
       path: '/pokemons',
       builder: (context, state) => const PokemonsScreen(),
-      routes: [GoRoute(path: ':id', builder: (context, state) => Container())],
+      routes: [
+        GoRoute(
+          path: ':id',
+          builder: (context, state) {
+            final pokemonId = state.pathParameters['id'] ?? '1';
+            return PokemonScreen(pokemonId: pokemonId);
+          },
+        ),
+      ],
     ),
   ],
 );
