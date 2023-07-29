@@ -38,8 +38,8 @@
 
                 <data android:scheme="http"  />
                 <data android:scheme="https" />
-                <!-- TODO: -->
-                <data android:host="my web domain" />
+              
+                <data android:host="deep-linking-web-app-production.up.railway.app" />
 
             </intent-filter>
 

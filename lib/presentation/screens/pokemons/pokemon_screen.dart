@@ -37,7 +37,9 @@ class PokemonView extends StatelessWidget {
           IconButton(
               onPressed: () {
                 //link =deepLink
-                SharePlugin.shareLink(pokemon.sprintFront, 'enviar pokemon');
+                SharePlugin.shareLink(
+                    "https://deep-linking-web-app-production.up.railway.app/pokemons/${pokemon.id}/",
+                    'enviar pokemon');
               },
               icon: const Padding(
                 padding: EdgeInsets.all(16.0),

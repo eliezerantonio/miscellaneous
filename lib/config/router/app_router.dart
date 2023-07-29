@@ -46,5 +46,9 @@ final router = GoRouter(
         ),
       ],
     ),
+    GoRoute(
+      path: '/biometrics',
+      builder: (context, state) => const BiometricScreen(),
+    ),
   ],
 );
