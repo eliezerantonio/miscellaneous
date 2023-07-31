@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class BiometricScreen extends StatelessWidget {
+import '../../providers/providers.dart';
+
+class BiometricScreen extends ConsumerWidget {
   const BiometricScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final canCheckBiometrics = ref.watch(canCheckBiometricsProvider);
+
+    final localAuthState = ref.watch(localAuthProvider);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Biometric Screen'),
@@ -13,17 +19,19 @@ class BiometricScreen extends StatelessWidget {
         child: Column(
           children: [
             FilledButton(
-              onPressed: () {},
+              onPressed: () async {
+                await ref.read(localAuthProvider.notifier).authenticateUser();
+              },
               child: const Text('Autenticar'),
             ),
-            const Text(
-              'Estado Biometrico',
-              style: TextStyle(fontSize: 30),
+            canCheckBiometrics.when(
+              data: (canCheck) => Text("Pode: $canCheck"),
+              error: (error, stackTrace) => Text('$error'),
+              loading: () => const CircularProgressIndicator(),
             ),
-            const Text(
-              'Estado XXX',
-              style: TextStyle(fontSize: 30),
-            ),
+            const Text('Estado Biometrico', style: TextStyle(fontSize: 30)),
+            Text('Estado: ${localAuthState.toString()}',
+                style: const TextStyle(fontSize: 17)),
           ],
         ),
       ),
