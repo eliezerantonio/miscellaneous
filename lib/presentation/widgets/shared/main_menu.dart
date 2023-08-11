@@ -47,9 +47,44 @@ final _menuItems = <_MenuItem>[
     route: '/pokemons',
   ),
   _MenuItem(
+    title: 'DbPokemons',
+    icon: Icons.storage_outlined,
+    route: '/db-pokemons',
+  ),
+  _MenuItem(
     title: 'Biometrias',
     icon: Icons.fingerprint,
     route: '/biometrics',
+  ),
+  _MenuItem(
+    title: 'Localização',
+    icon: Icons.pin_drop,
+    route: '/location',
+  ),
+  _MenuItem(
+    title: 'Mapas',
+    icon: Icons.map_outlined,
+    route: '/maps',
+  ),
+  _MenuItem(
+    title: 'Controlado',
+    icon: Icons.gamepad_outlined,
+    route: '/controlled-map',
+  ),
+  _MenuItem(
+    title: 'Badge',
+    icon: Icons.notification_important,
+    route: '/badge',
+  ),
+  _MenuItem(
+    title: 'Ad Full',
+    icon: Icons.ad_units,
+    route: '/ad-fullscreen',
+  ),
+  _MenuItem(
+    title: 'Ad Rewarded',
+    icon: Icons.newspaper,
+    route: '/ad-rewarded',
   ),
 ];
 

@@ -2,7 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 	<dict>
+		<!-- ad mob -->
 
+		<key>GADApplicationIdentifier</key>
+		<string>ca-app-pub-1003118360848278~7099489416</string>
+
+		<!-- Badge -->
+		<key>UIBackgroundModes</key>
+		<array>
+			<string>remote-notification</string>
+		</array>
 		<!-- Biometric -->
 
 		<key>NSFaceIDUsageDescription</key>

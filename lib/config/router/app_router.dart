@@ -1,5 +1,4 @@
 import 'package:go_router/go_router.dart';
-import 'package:miscellaneous/presentation/screens/permissions/permissions_screen.dart';
 
 import '../../presentation/screens/screens.dart';
 
@@ -47,8 +46,36 @@ final router = GoRouter(
       ],
     ),
     GoRoute(
+      path: '/db-pokemons',
+      builder: (context, state) => const DbPokemonScreen(),
+    ),
+    GoRoute(
       path: '/biometrics',
       builder: (context, state) => const BiometricScreen(),
+    ),
+    GoRoute(
+      path: locationRoute,
+      builder: (context, state) => const LocationScreen(),
+    ),
+    GoRoute(
+      path: mapsRoute,
+      builder: (context, state) => const MapScreen(),
+    ),
+    GoRoute(
+      path: controledMapRoute,
+      builder: (context, state) => const ControlledMapScreen(),
+    ),
+    GoRoute(
+      path: bagRoute,
+      builder: (context, state) => const BadgeScreen(),
+    ),
+    GoRoute(
+      path: '/ad-fullscreen',
+      builder: (context, state) => const AdFullScreen(),
+    ),
+    GoRoute(
+      path: '/ad-rewarded',
+      builder: (context, state) => const AdRewardedScreen(),
     ),
   ],
 );
